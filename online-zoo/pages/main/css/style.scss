@@ -47,23 +47,26 @@ $font-family-primary: 'Roboto', sans-serif;
   line-height: 140%;
   text-transform: uppercase;
   color: $color-text-white;
-  background: $color-primary;
+  background: $color-primary, $color-text-primary;
   text-decoration: none;
   border-radius: $radius;
-  transition: .2s;
+  transition: background-color .2s;
   cursor: pointer;
   border: none;
 
   &:hover {
     background: $color-primary-dark;
+    transition: background-color .2s;
   }
 
   &:active {
     background: $color-secondary;
+    transition: background-color .2s;
   }
 
   &:disabled {
     background: $color-gray;
+    transition: background-color .2s;
     cursor: not-allowed;
   }
 }
@@ -125,7 +128,7 @@ body {
   align-items: center;
   width: 82px;
   height: 52px;
-  border: 1px solid $color-text-white;
+  border: 0.5px solid $color-text-white;
   border-radius: 2px;
   color: $color-text-white;
   font-weight: 400;
@@ -142,6 +145,11 @@ body {
     height: 21px;
 
   }
+}
+
+.logotype a {
+  color: $color-text-white;
+  text-decoration: none;
 }
 
 @mixin section-title ($color) {
@@ -199,6 +207,7 @@ body {
 .nav__item a {
   color: $color-text-white;
   text-decoration: none;
+  transition: all 0.2s;
 
   &:hover {
     //@extend %gradient-primary-text;
@@ -315,11 +324,12 @@ body {
   position: relative;
   width: 62px;
   height: 62px;
-  background: $color-primary;
+  background: $color-primary, $color-text-primary;
   border-radius: 100px;
   cursor: pointer;
   border: none;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  transition: background-color .3s;
 
   &::before {
     content: '';
@@ -332,6 +342,16 @@ body {
     left: 0;
     right: 0;
     margin: auto;
+  }
+
+  &:hover {
+    background: $color-primary-dark;
+    transition: background-color .3s;
+  }
+
+  &:active {
+    background: $color-secondary;
+    transition: background-color .3s;
   }
 }
 
@@ -361,10 +381,45 @@ body {
     background-image: linear-gradient(white, white), $color-primary;
     background-clip: padding-box, border-box;
     overflow: hidden;
+    transition: 1.2s;
+
+    & img {
+      transition: transform .7s;
+    }
+
+    &:hover {
+      height: 366px;
+      transition: 1.2s;
+    }
+
+    &:hover img {
+      transform: scale(1.1);
+      transition: transform .7s;
+    }
+
+    &:hover .card__text {
+      .card__title {
+        color: $color-text-white;
+        transition: color 1s;
+      }
+
+      top: -60px;
+      color: $color-text-white;
+      background-color: rgba(0, 0, 0, .65);
+      transition: top 1.2s, background-color 1.2s, color 1s;
+    }
+
+    .card__img {
+      width: 366px;
+      height: 366px;
+      overflow: hidden;
+    }
 
     .card__text {
       position: relative;
       padding: 8px 45px 14px 16px;
+      top: 0;
+      transition: top 1.2s, background-color 1.2s, color 1s;
 
       &::before {
         content: '';
@@ -400,6 +455,7 @@ body {
       line-height: 120%;
       color: $color-text-black;
       text-transform: uppercase;
+      transition: color 1s;
     }
   }
 }
@@ -423,13 +479,19 @@ body {
   .section__text {
     align-self: start;
     padding-left: 99px;
-    margin-bottom: 46px;
+    margin-bottom: 48px;
 
     p {
       margin-bottom: 10px;
     }
+
+    p:nth-of-type(1) {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 130%;
+    }
   
-    p:nth-last-child(1) {
+    p:nth-of-type(2) {
       width: 85%;
     }
   
@@ -437,6 +499,12 @@ body {
       color: $color-text-dark;
       text-decoration: none;
       border-bottom: 1px solid $color-text-primary;
+      transition: .2s;
+
+      &:hover {
+        color: $color-text-primary;
+        transition: .2s;
+      }
     }
   }
 
@@ -544,6 +612,7 @@ body {
 
 .testimonials__item {
   width: 267px;
+  height: 391px;
   padding: 15px 13px 20px 15px;
   background-color: $color-background-light-gray;
   border: double 2px transparent;
@@ -585,10 +654,16 @@ body {
 }
 
 .testimonials__body {
+  height: 308px;
   font-weight: 300;
   font-size: 15px;
   line-height: 120%;
   color: $color-gray;
+  overflow-y: scroll;
+
+  &::-webkit-scrollbar { 
+    width: 0;
+  }
 }
 
 .testimonials__scroll {
@@ -624,11 +699,21 @@ body {
     margin-bottom: 50px;
   }
 
-  .copyright {
+  .copyright,
+  .copyright a {
     font-weight: 100;
     font-size: 16px;
     line-height: 130%;
     color: $color-text-white;
+    text-decoration: none;
+
+    &:hover {
+      color: $color-text-primary;
+    }
+
+    &:active {
+      color: $color-secondary;
+    }
   }
 
   .copyright p:first-of-type {
@@ -662,6 +747,7 @@ body {
   background-clip: padding-box, border-box;
   border-radius: 2px;
   color: $color-text-white;
+  outline: none;
   
   &::placeholder {
     font-weight: 400;
@@ -669,12 +755,22 @@ body {
     line-height: 140%;
     color: $color-text-light-gray;
   }
-  &:valid {
-    background-image: linear-gradient(black, black), $color-secondary;
+
+  &:valid,
+  &:focus {
+    background-image: none;
+    border: double 0.7px $color-secondary;
+    color: $color-secondary;
   }
 
   &:invalid {
-    background-image: linear-gradient(black, black), $color-red;
+    border: double 0.7px $color-red;
+    background-image: none;
+    
+
+    &::placeholder {
+      color: $color-red;
+    }
   }
 }
 
@@ -689,6 +785,17 @@ body {
   border-radius: 5px;
 }
 
+.form__email:valid ~ .form__submit,
+.form__email:focus ~ .form__submit {
+  color: $color-secondary;
+  border: 1px solid $color-secondary;
+}
+
+.form__email:invalid ~ .form__submit {
+  color: $color-red;
+  border: 1px solid $color-red;
+}
+
 .links_and_copyright {
   display: flex;
   justify-content: space-between;
@@ -699,7 +806,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 13px;
-  padding-right: 122px;
+  padding-right: 117px;
   list-style: none;
 }
 
@@ -714,8 +821,19 @@ body {
     height: 26px;
     left: 0px;
     top: -4px;
-    background: rgba(196, 196, 196, 0.5);
+    background-color: rgba(196, 196, 196, 0.5);
     border-radius: 50%;
+    transition: background-color .2s;
+  }
+  
+  &:hover::before {
+    background-color: $color-text-primary;
+    transition: background-color .2s;
+  }
+
+  &:active::before {
+    background-color: $color-secondary;
+    transition: background-color .2s;
   }
 
   &::after {
@@ -728,6 +846,19 @@ body {
 .social__item a {
   color: $color-text-white;
   text-decoration: none;
+  transition: color .2s;
+}
+
+.social__item:hover,
+.social__item:hover a {
+  color: $color-text-primary;
+  transition: color .2s;
+}
+
+.social__item:active,
+.social__item:active a {
+  color: $color-secondary;
+  transition: color .2s;
 }
 
 .social__item_facebook::after {

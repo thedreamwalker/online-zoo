@@ -1,11 +1,15 @@
 .watch {
   min-height: 387px;
-  background: url(../../../assets/img/panda_bg.png) center 0px no-repeat;
+  background: url(../../../assets/img/panda_bg.png) center -3px no-repeat;
+  background-size: cover;
 }
 
 .pick_and_feed {
   padding-top: 40px;
   padding-bottom: 180px;
+}
+.pick_and_feed .container__background {
+  padding: 41px 92px 62px 92px;
 }
 
 .container__light .section__subtitle:nth-of-type(1) {
@@ -17,20 +21,20 @@
 }
 .container__light p {
   padding-bottom: 43px;
-  font-weight: 500;
+  font-weight: 400;
   font-size: 16px;
   line-height: 140%;
+}
+.container__light p b {
+  font-weight: 500;
 }
 .container__light .section__subtitle:nth-of-type(2) {
   margin-bottom: 60px;
   color: #fe9013;
 }
 
-.container__background {
-  padding: 40px 92px 62px 92px;
-}
 .container__background .section__title {
-  padding-right: 10px;
+  padding-right: 12px;
   margin-bottom: 20px;
 }
 .container__background .section__text {
@@ -57,8 +61,8 @@
 .panda::before, .panda::after {
   content: "";
   position: absolute;
-  top: 135px;
-  left: 165px;
+  top: 136px;
+  left: 167px;
   width: 19px;
   height: 2px;
   background-color: #333B41;
@@ -104,7 +108,7 @@
   width: 100%;
 }
 .amount p {
-  margin-left: 2px;
+  margin-left: 4px;
   margin-bottom: 17px;
 }
 
@@ -122,7 +126,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0px 30px 0px 26px;
+  padding: 0px 40px 0px 26px;
   width: 100%;
   height: 27px;
   list-style: none;
@@ -135,6 +139,13 @@
   width: 93%;
   height: 2px;
   background-color: #72828E;
+}
+.amount__fieldset .amount__wrapper_input {
+  position: absolute;
+  top: -21px;
+  left: -20px;
+  padding: 20px;
+  cursor: pointer;
 }
 .amount__fieldset input[type=radio] {
   margin: 0;
@@ -162,17 +173,27 @@
   position: absolute;
   width: 36px;
   height: 36px;
-  top: -9px;
-  left: -15px;
+  top: 11px;
+  left: 5px;
   background-color: transparent;
   border-radius: 50%;
   border: 2px solid #fe9013;
+  transform: scale(1);
+  transition: transform 0.3s;
+}
+.amount__fieldset input[type=radio]:checked:hover::before {
+  transform: scale(1.1);
+  transition: transform 0.3s;
 }
 .amount__fieldset input[type=radio]:checked::after {
   width: 20px;
   height: 20px;
-  top: -1px;
-  left: -7px;
+  top: 19px;
+  left: 13px;
+}
+.amount__fieldset input[type=radio]:checked:hover::after {
+  transform: scale(1.1);
+  transition: transform 0.3s;
 }
 .amount__fieldset .amount__item {
   position: relative;
@@ -181,8 +202,8 @@
 .amount__fieldset label {
   position: absolute;
   width: 70px;
-  top: 37px;
-  left: -25px;
+  top: 58px;
+  left: -5px;
   font-weight: 500;
   font-size: 26px;
   line-height: 140%;
@@ -202,13 +223,38 @@
 
 .amount__another_input {
   width: 268px;
-  padding: 16px 9px 14px;
+  padding: 15px 8px 14px;
   background-color: transparent;
   font-weight: 400;
   font-size: 16px;
   line-height: 140%;
   border: 1px solid #929699;
   border-radius: 2px;
+  outline: none;
+}
+.amount__another_input:focus {
+  border: 1px solid #4b9200;
+}
+.amount__another_input:focus::-moz-placeholder {
+  color: #4b9200;
+}
+.amount__another_input:focus:-ms-input-placeholder {
+  color: #4b9200;
+}
+.amount__another_input:focus::placeholder {
+  color: #4b9200;
+}
+.amount__another_input:invalid {
+  border: 1px solid #d31414;
+}
+.amount__another_input:invalid::-moz-placeholder {
+  color: #d31414;
+}
+.amount__another_input:invalid:-ms-input-placeholder {
+  color: #d31414;
+}
+.amount__another_input:invalid::placeholder {
+  color: #d31414;
 }
 
 input::-webkit-outer-spin-button,
@@ -226,6 +272,14 @@ input[type=number] {
   position: absolute;
   right: 10px;
   fill: #929699;
+}
+
+.amount__another_input:focus ~ .amount__another_dollar {
+  fill: #4b9200;
+}
+
+.amount__another_input:invalid ~ .amount__another_dollar {
+  fill: #d31414;
 }
 
 .periodicity__fieldset {

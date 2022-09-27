@@ -29,12 +29,17 @@ $font-family-primary: 'Roboto', sans-serif;
 
 .watch {
   min-height: 387px;
-  background: url(../../../assets/img/panda_bg.png) center 0px no-repeat;
+  background: url(../../../assets/img/panda_bg.png) center -3px no-repeat;
+  background-size: cover;
 }
 
 .pick_and_feed {
   padding-top: 40px;
   padding-bottom: 180px;
+
+  .container__background {
+    padding: 41px 92px 62px 92px;
+  }
 }
 
 .container__light {
@@ -48,9 +53,13 @@ $font-family-primary: 'Roboto', sans-serif;
   }
   p {
     padding-bottom: 43px;
-    font-weight: 500;
+    font-weight: 400;
     font-size: 16px;
     line-height: 140%;
+
+    & b {
+      font-weight: 500;
+    }
   }
 
   .section__subtitle:nth-of-type(2) {
@@ -60,10 +69,9 @@ $font-family-primary: 'Roboto', sans-serif;
 }
 
 .container__background {
-  padding: 40px 92px 62px 92px;
 
   .section__title {
-    padding-right: 10px;
+    padding-right: 12px;
     margin-bottom: 20px;
   }
   
@@ -94,8 +102,8 @@ $font-family-primary: 'Roboto', sans-serif;
   &::before, &::after  {
     content: "";
     position: absolute;
-    top: 135px;
-    left: 165px;
+    top: 136px;
+    left: 167px;
     width: 19px;
     height: 2px;
     background-color: $color-black_blue;
@@ -144,7 +152,7 @@ $font-family-primary: 'Roboto', sans-serif;
   width: 100%;
 
   p {
-    margin-left: 2px;
+    margin-left: 4px;
     margin-bottom: 17px;
   }
 }
@@ -163,7 +171,7 @@ $font-family-primary: 'Roboto', sans-serif;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0px 30px 0px 26px;
+    padding: 0px 40px 0px 26px;
     width: 100%;
     height: 27px;
     list-style: none;
@@ -177,6 +185,14 @@ $font-family-primary: 'Roboto', sans-serif;
       height: 2px;
       background-color: #72828E;
     }
+  }
+
+  .amount__wrapper_input {
+    position: absolute;
+    top: -21px;
+    left: -20px;
+    padding: 20px;
+    cursor: pointer;
   }
 
   input[type="radio"] {
@@ -206,18 +222,30 @@ $font-family-primary: 'Roboto', sans-serif;
         position: absolute;
         width: 36px;
         height: 36px;
-        top: -9px;
-        left: -15px;
+        top: 11px;
+        left: 5px;
         background-color: transparent;
         border-radius: 50%;
         border: 2px solid $color-text-primary;
+        transform: scale(1);
+        transition: transform .3s;
+      }
+
+      &:hover::before {
+        transform: scale(1.1);
+        transition: transform .3s;
       }
 
       &::after {
         width: 20px;
         height: 20px;
-        top: -1px;
-        left: -7px;
+        top: 19px;
+        left: 13px;
+      }
+
+      &:hover::after {
+        transform: scale(1.1);
+        transition: transform .3s;
       }
     }
   }
@@ -230,8 +258,8 @@ $font-family-primary: 'Roboto', sans-serif;
   label {
     position: absolute;
     width: 70px;
-    top: 37px;
-    left: -25px;
+    top: 58px;
+    left: -5px;
     font-weight: 500;
     font-size: 26px;
     line-height: 140%;
@@ -253,13 +281,30 @@ $font-family-primary: 'Roboto', sans-serif;
 
 .amount__another_input {
   width: 268px;
-  padding: 16px 9px 14px;
+  padding: 15px 8px 14px;
   background-color: transparent;
   font-weight: 400;
   font-size: 16px;
   line-height: 140%;
   border: 1px solid #929699;
   border-radius: 2px;
+  outline: none;
+
+  &:focus {
+    border: 1px solid $color-secondary;
+
+    &::placeholder {
+      color: $color-secondary;
+    }
+  }
+
+  &:invalid {
+    border: 1px solid $color-red;
+
+    &::placeholder {
+      color: $color-red;
+    }
+  }
 }
 
 input::-webkit-outer-spin-button,
@@ -277,6 +322,14 @@ input[type=number] {
   position: absolute;
   right: 10px;
   fill: #929699;
+}
+
+.amount__another_input:focus ~ .amount__another_dollar {
+  fill: $color-secondary;
+}
+
+.amount__another_input:invalid ~ .amount__another_dollar {
+  fill: $color-red;
 }
 
 .periodicity__fieldset {
