@@ -783,6 +783,7 @@ body {
   color: $color-text-black;
   border: 1px solid $color-black_blue;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .form__email:valid ~ .form__submit,
