@@ -668,6 +668,12 @@ body {
   border-radius: 2px;
   color: #ffffff;
   outline: none;
+  /*
+    &:valid {
+      background-image: none;
+      border: double 0.7px $color-secondary;
+      color: $color-secondary;
+    }*/
 }
 .form__email::-moz-placeholder {
   font-weight: 400;
@@ -687,14 +693,14 @@ body {
   line-height: 140%;
   color: #BDBDBD;
 }
-.form__email:valid, .form__email:focus {
-  background-image: none;
+.form__email:focus {
+  color: #BDBDBD;
   border: double 0.7px #4b9200;
-  color: #4b9200;
 }
 .form__email:invalid {
   border: double 0.7px #d31414;
   background-image: none;
+  color: #d31414;
 }
 .form__email:invalid::-moz-placeholder {
   color: #d31414;
