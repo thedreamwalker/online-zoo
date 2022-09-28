@@ -687,7 +687,7 @@ body {
   line-height: 140%;
   color: #BDBDBD;
 }
-.form__email:valid, .form__email:focus {
+.form__email:valid {
   background-image: none;
   border: double 0.7px #4b9200;
   color: #4b9200;
@@ -695,6 +695,7 @@ body {
 .form__email:invalid {
   border: double 0.7px #d31414;
   background-image: none;
+  color: #d31414;
 }
 .form__email:invalid::-moz-placeholder {
   color: #d31414;

@@ -756,8 +756,7 @@ body {
     color: $color-text-light-gray;
   }
 
-  &:valid,
-  &:focus {
+  &:valid {
     background-image: none;
     border: double 0.7px $color-secondary;
     color: $color-secondary;
@@ -766,8 +765,8 @@ body {
   &:invalid {
     border: double 0.7px $color-red;
     background-image: none;
+    color: $color-red;
     
-
     &::placeholder {
       color: $color-red;
     }
