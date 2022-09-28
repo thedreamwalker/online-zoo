@@ -756,11 +756,16 @@ body {
     color: $color-text-light-gray;
   }
 
+  &:focus {
+    color: $color-text-light-gray;
+    border: double 0.7px $color-secondary;
+  }
+/*
   &:valid {
     background-image: none;
     border: double 0.7px $color-secondary;
     color: $color-secondary;
-  }
+  }*/
 
   &:invalid {
     border: double 0.7px $color-red;
