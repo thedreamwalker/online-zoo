@@ -1057,6 +1057,7 @@ body {
 }
 @media (max-width: 999.98px) {
   .how__list {
+    justify-content: center;
     width: 100%;
     gap: 42px;
     margin-bottom: 40px;

@@ -52,7 +52,7 @@
 @media (max-width: 639.98px) {
   .pick_and_feed .container {
     width: 300px;
-    margin: 0 10px;
+    margin: 0 auto;
   }
 }
 .pick_and_feed .container__background {
