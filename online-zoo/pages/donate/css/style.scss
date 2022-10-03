@@ -28,23 +28,92 @@ $font-line-height: 140%;
 $font-family-primary: 'Roboto', sans-serif;
 
 .watch {
-  min-height: 387px;
-  background: url(../../../assets/img/panda_bg.png) center -3px no-repeat;
+  min-height: 390px;
+  background: url(../../../assets/img/panda_bg.png) center no-repeat;
   background-size: cover;
+
+  @media (max-width: 1599.98px) {
+    background: url(../../../assets/img/panda_bg.png) left -173px center no-repeat;
+  }
+
+  @media (max-width: 999.98px) {
+    min-height: 335px;
+    background: url(../../../assets/img/panda_bg.png) left -273px center no-repeat;
+    background-size: cover;
+  }
+
+  @media (max-width: 639.98px) {
+    min-height: 187px;
+    background: url(../../../assets/img/panda_bg.png) left -148px center no-repeat;
+    background-size: cover;
+  }
 }
 
 .pick_and_feed {
   padding-top: 40px;
   padding-bottom: 180px;
 
+  @media (max-width: 1599.98px) {
+    padding-bottom: 30px;
+  }
+
+  @media (max-width: 999.98px) {
+    padding-top: 30px;
+    padding-bottom: 46px;
+  }
+
+  @media (max-width: 639.98px) {
+    padding-bottom: 20px;
+  }
+
+  .container {
+    @media (max-width: 999.98px) {
+      width: 600px;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 639.98px) {
+      width: 300px;
+      margin: 0 10px;
+    }
+  }
+
   .container__background {
     padding: 41px 92px 62px 92px;
+
+    @media (max-width: 1599.98px) {
+      padding: 20px 47px 46px 47px;
+    }
+
+    @media (max-width: 999.98px) {
+      padding: 30px 0px 30px 0px;
+    }
+
+    @media (max-width: 639.98px) {
+      padding: 20px 0px 20px 0px;
+    }
   }
 }
 
 .container__light {
   .section__subtitle:nth-of-type(1) {
     margin-bottom: 10px;
+
+    @media (max-width: 1599.98px) {
+      width: 80%;
+      margin-bottom: 30px;
+    }
+
+    @media (max-width: 999.98px) {
+      width: 100%;
+      margin-bottom: 20px;
+      font-size: 24px;
+      line-height: 120%;
+    }
+
+    @media (max-width: 639.98px) {
+      text-align: left;
+    }
   }
 
   .section__subtitle,
@@ -57,6 +126,14 @@ $font-family-primary: 'Roboto', sans-serif;
     font-size: 16px;
     line-height: 140%;
 
+    @media (max-width: 999.98px) {
+      padding-bottom: 29px;
+    }
+
+    @media (max-width: 639.98px) {
+      line-height: 138%;
+    }
+
     & b {
       font-weight: 500;
     }
@@ -65,6 +142,18 @@ $font-family-primary: 'Roboto', sans-serif;
   .section__subtitle:nth-of-type(2) {
     margin-bottom: 60px;
     color: $color-text-primary;
+
+    @media (max-width: 1599.98px) {
+      margin-bottom: 42px;
+    }
+
+    @media (max-width: 999.98px) {
+      margin-bottom: 29px;
+    }
+
+    @media (max-width: 639.98px) {
+      text-align: left;
+    }
   }
 }
 
@@ -73,20 +162,61 @@ $font-family-primary: 'Roboto', sans-serif;
   .section__title {
     padding-right: 12px;
     margin-bottom: 20px;
+
+    @media (max-width: 1599.98px) {
+      margin-bottom: 10px;
+    }
+
+    @media (max-width: 999.98px) {
+      margin-bottom: 20px;
+      padding-right: 0px;
+      font-size: 48px;
+    }
+
+    @media (max-width: 639.98px) {
+      margin-bottom: 10px;
+      font-size: 24px;
+    }
   }
   
   .section__text {
     padding-left: 0;
     margin-bottom: 60px;
 
+    @media (max-width: 999.98px) {
+      margin-bottom: 50px;
+    }
+
+    @media (max-width: 639.98px) {
+      margin-bottom: 10px;
+    }
+
     .section__subtitle {
       margin-bottom: 0px;
+
+      @media (max-width: 999.98px) {
+        font-size: 24px;
+        text-align: center;
+      }
+
+      @media (max-width: 639.98px) {
+        font-size: 16px;
+        line-height: 140%;
+      }
     }
   }
 
   .button {
     margin-right: -8px;
     margin-bottom: 30px;
+
+    @media (max-width: 639.98px) {
+      margin-right: 0px;
+    }
+  }
+  
+  .share {
+    font-size: 15.9px;
   }
 }
 
@@ -99,6 +229,16 @@ $font-family-primary: 'Roboto', sans-serif;
   margin-bottom: 48px;
   padding-right: 13px;
 
+  @media (max-width: 999.98px) {
+    margin-bottom: 42px;
+  }
+
+  @media (max-width: 639.98px) {
+    gap: 50px;
+    padding-right: 0px;
+    margin-bottom: 2px;
+  }
+
   &::before, &::after  {
     content: "";
     position: absolute;
@@ -108,6 +248,13 @@ $font-family-primary: 'Roboto', sans-serif;
     height: 2px;
     background-color: $color-black_blue;
     transform: rotate(45deg);
+
+    @media (max-width: 639.98px) {
+      top: 76px;
+      left: 95px;
+      width: 10px;
+      height: 1px;  
+    }
   }
 
   &::after {
@@ -120,6 +267,17 @@ $font-family-primary: 'Roboto', sans-serif;
   flex-direction: column;
   align-items: center;
   padding-top: 55px;
+
+  @media (max-width: 639.98px) {
+    padding-top: 29px;
+  }
+
+  p {
+    @media (max-width: 639.98px) {
+      font-size: 9.02255px;
+      line-height: 140%;
+    }
+  }
 }
 
 .panda__number {
@@ -128,12 +286,22 @@ $font-family-primary: 'Roboto', sans-serif;
   font-size: 72px;
   line-height: 80%;
   color: $color-text-black;
+
+  @media (max-width: 639.98px) {
+    margin-bottom: 9px;
+    font-size: 40.6015px;
+  }
 }
 
 .panda__img {
   position: relative;
   width: 284px;
   height: 246px;
+
+  @media (max-width: 639.98px) {
+    width: 160.15px;
+    height: 138.72px;
+  }
 
   &::before {
     content: '';
@@ -143,6 +311,11 @@ $font-family-primary: 'Roboto', sans-serif;
     background-image: url(../../../assets/svg/animals-widget.svg);
     top: 0;
     left: 0;
+
+    @media (max-width: 639.98px) {
+      width: 160.15px;
+      height: 138.72px;
+    }
   }
 }
 
@@ -154,6 +327,16 @@ $font-family-primary: 'Roboto', sans-serif;
   p {
     margin-left: 4px;
     margin-bottom: 17px;
+
+    @media (max-width: 999.98px) {
+      margin-left: 10px;
+      margin-bottom: 7px;
+    }
+
+    @media (max-width: 639.98px) {
+      margin-left: 0px;
+      margin-bottom: 9px;
+    }
   }
 }
 
@@ -166,6 +349,19 @@ $font-family-primary: 'Roboto', sans-serif;
   border-radius: 2px;
   border: none;
 
+  @media (max-width: 1599.98px) {
+    width: 96%;
+  }
+
+  @media (max-width: 999.98px) {
+    width: 100%;
+  }
+
+  @media (max-width: 639.98px) {
+    height: 13.5px;
+    margin-bottom: 49px;
+  }
+
   .amount__list {
     position: relative;
     display: flex;
@@ -176,6 +372,23 @@ $font-family-primary: 'Roboto', sans-serif;
     height: 26px;
     list-style: none;
 
+    @media (max-width: 1599.98px) {
+      width: 104%;
+      margin-left: -13px;
+    }
+
+    @media (max-width: 999.98px) {
+      width: 98%;
+      margin-left: 9px;
+    }
+
+    @media (max-width: 639.98px) {
+      width: 103%;
+      height: 13.5px;
+      margin-left: -7px;
+      padding: 5px 0px 0px 0;
+    }
+
     &::before {
       content: '';
       position: absolute;
@@ -184,11 +397,30 @@ $font-family-primary: 'Roboto', sans-serif;
       width: 93%;
       height: 2px;
       background-color: #72828E;
+
+      @media (max-width: 639.98px) {
+        top: 6px;
+        left: 25px;
+        width: 85%;
+      }
     }
   }
 
   .amount__item {
     position: relative;
+
+    &:first-of-type {
+      @media (max-width: 1599.98px) {
+        display: none;
+      }
+    }
+
+    &:nth-child(2),
+    &:nth-child(3) {
+      @media (max-width: 999.98px) {
+        display: none;
+      }
+    }
   }
 
   input[type="radio"] {
@@ -211,6 +443,11 @@ $font-family-primary: 'Roboto', sans-serif;
     transition: 0.2s all linear;
     background-color: $color-yellow;
     border-radius: 50%;
+
+    @media (max-width: 639.98px) {
+      width: 5px;
+      height: 5px;
+    }
   }
 
   .amount__label_value {
@@ -222,6 +459,31 @@ $font-family-primary: 'Roboto', sans-serif;
     font-size: 26px;
     line-height: 140%;
     color: $color-black_blue;
+
+    @media (max-width: 1599.98px) {
+      left: 14px;
+    }
+
+    @media (max-width: 999.98px) {
+      left: 5px;
+    }
+    
+    @media (max-width: 639.98px) {
+      width: 35px;
+      top: 36px;
+      left: 16px;
+      font-size: 13px;
+    }
+
+    svg {
+      width: 10px;
+      height: 20px;
+
+      @media (max-width: 639.98px) {
+        width: 5px;
+        height: 10px;
+      }
+    }
 
     svg path {
       fill: $color-black_blue;
@@ -251,6 +513,13 @@ $font-family-primary: 'Roboto', sans-serif;
         border: 2px solid $color-text-primary;
         transform: scale(1);
         transition: transform .3s;
+
+        @media (max-width: 639.98px) {
+          width: 18px;
+          height: 18px;
+          top: 12px;
+          left: 16px;
+        }
       }
 
       &:hover::before {
@@ -263,6 +532,13 @@ $font-family-primary: 'Roboto', sans-serif;
         height: 20px;
         top: 12px;
         left: 17px;
+
+        @media (max-width: 639.98px) {
+          width: 10px;
+          height: 10px;
+          top: 16px;
+          left: 20px;
+        }
       }
 
       &:hover::after {
@@ -279,6 +555,14 @@ $font-family-primary: 'Roboto', sans-serif;
   align-items: center;
   align-self: center;
   margin-bottom: 18px;
+
+  @media (max-width: 999.98px) {
+    margin-bottom: 25px;
+  }
+
+  @media (max-width: 639.98px) {
+    margin-bottom: 20px;
+  }
 }
 
 .amount__another_input {
@@ -291,6 +575,11 @@ $font-family-primary: 'Roboto', sans-serif;
   border: 1px solid #929699;
   border-radius: 2px;
   outline: none;
+
+  @media (max-width: 999.98px) {
+    width: 180px;
+    padding: 8px 6px 9px;
+  }
 
   &:focus {
     border: 1px solid $color-secondary;
@@ -340,6 +629,14 @@ input[type=number] {
   margin-bottom: 20px;
   padding-left: 0px;
   border: none;
+
+  @media (max-width: 999.98px) {
+    padding-right: 20px;
+  }
+
+  @media (max-width: 639.98px) {
+    margin-bottom: 17px;
+  }
 }
 
 .periodicity__list {
@@ -367,5 +664,16 @@ input[type=number] {
     display: flex;
     align-items: center;
     gap: 10px;
+  }
+}
+
+.social__list {
+
+  @media (max-width: 1599.98px) {
+    padding-right: 117px;
+  }
+  
+  @media (max-width: 999.98px) {
+    padding-right: 0;
   }
 }
