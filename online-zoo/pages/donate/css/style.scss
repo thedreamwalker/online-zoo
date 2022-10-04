@@ -33,6 +33,10 @@ $font-family-primary: 'Roboto', sans-serif;
   background-size: cover;
 
   @media (max-width: 1599.98px) {
+    background: url(../../../assets/img/panda_bg.png) left center no-repeat;
+  }
+
+  @media (max-width: 1419.98px) {
     background: url(../../../assets/img/panda_bg.png) left -173px center no-repeat;
   }
 
@@ -43,6 +47,12 @@ $font-family-primary: 'Roboto', sans-serif;
   }
 
   @media (max-width: 639.98px) {
+    min-height: 187px;
+    background: url(../../../assets/img/panda_bg.png) left -129px center no-repeat;
+    background-size: cover;
+  }
+
+  @media (max-width: 539.98px) {
     min-height: 187px;
     background: url(../../../assets/img/panda_bg.png) left -148px center no-repeat;
     background-size: cover;
@@ -226,8 +236,12 @@ $font-family-primary: 'Roboto', sans-serif;
   justify-content: center;
   align-items: center;
   gap: 89px;
-  margin-bottom: 48px;
+  margin-bottom: 46px;
   padding-right: 13px;
+
+  @media (max-width: 1599.98px) {
+    margin-bottom: 48px;
+  }
 
   @media (max-width: 999.98px) {
     margin-bottom: 42px;
@@ -328,6 +342,10 @@ $font-family-primary: 'Roboto', sans-serif;
     margin-left: 4px;
     margin-bottom: 17px;
 
+    @media (max-width: 1599.98px) {
+      margin-left: 20px;
+    }
+
     @media (max-width: 999.98px) {
       margin-left: 10px;
       margin-bottom: 7px;
@@ -351,6 +369,8 @@ $font-family-primary: 'Roboto', sans-serif;
 
   @media (max-width: 1599.98px) {
     width: 96%;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   @media (max-width: 999.98px) {

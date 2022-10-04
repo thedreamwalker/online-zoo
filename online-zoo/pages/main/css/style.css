@@ -57,15 +57,9 @@ body {
 }
 @media (max-width: 999.98px) {
   .container {
-    max-width: 600px;
+    max-width: 93.75%;
   }
 }
-@media (max-width: 639.98px) {
-  .container {
-    max-width: 300px;
-  }
-}
-
 .hidden {
   display: none;
 }
@@ -129,9 +123,18 @@ body {
     padding: 2px 20px;
   }
 }
+@media (max-width: 640px) {
+  .header {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    padding: 3px 0px 2px 0px;
+  }
+}
 @media (max-width: 639.98px) {
   .header {
-    padding: 3px 10px 2px 10px;
+    padding: 3px 0px 2px 0px;
   }
 }
 .header .container {
@@ -165,7 +168,7 @@ body {
 .header .copyright {
   margin-left: auto;
 }
-@media (max-width: 999.98px) {
+@media (max-width: 640px) {
   .header .nav__list {
     display: none;
   }
@@ -185,6 +188,11 @@ body {
 @media (max-width: 1599.98px) {
   .nav__list {
     gap: 48px;
+  }
+}
+@media (max-width: 769.98px) {
+  .nav__list {
+    gap: 25px;
   }
 }
 
@@ -217,7 +225,7 @@ body {
   z-index: 1;
   transition: transform 0.9s ease-in-out;
 }
-@media (max-width: 999.98px) {
+@media (max-width: 640px) {
   .nav__burger_button {
     display: flex;
   }
@@ -348,6 +356,13 @@ body {
     background-size: 120%;
   }
 }
+@media (max-width: 349.98px) {
+  .watch {
+    min-height: 224px;
+    background: url(../../../assets/img/Giant-Panda.png) center -1px no-repeat;
+    background-size: 120%;
+  }
+}
 .watch .container {
   display: flex;
   justify-content: flex-end;
@@ -457,6 +472,12 @@ body {
 @media (max-width: 639.98px) {
   .watch .button {
     left: 12px;
+    bottom: -60px;
+  }
+}
+@media (max-width: 349.98px) {
+  .watch .button {
+    left: 12px;
     bottom: -37px;
   }
 }
@@ -469,16 +490,28 @@ body {
 @media (max-width: 1599.98px) {
   .backstage {
     padding-top: 100px;
-    background: url(../../../assets/img/flower_foto1.png) no-repeat -204px center;
+    background: url(../../../assets/img/flower_foto1.png) no-repeat right -204px center;
   }
 }
 @media (max-width: 999.98px) {
   .backstage {
     padding-top: 60px;
+  }
+}
+@media (max-width: 640.98px) {
+  .backstage {
     background: url(../../../assets/img/flower_foto1.png) no-repeat right -29px top/25%;
+    transition: 0.9s ease-in-out;
   }
 }
 @media (max-width: 639.98px) {
+  .backstage {
+    padding-top: 68px;
+    padding-bottom: 0px;
+    background: url(../../../assets/img/flower_foto1.png) no-repeat right -41px top/17%;
+  }
+}
+@media (max-width: 549.98px) {
   .backstage {
     padding-top: 68px;
     padding-bottom: 0px;
@@ -503,7 +536,7 @@ body {
     grid-template-columns: 1fr;
   }
 }
-@media (max-width: 639.98px) {
+@media (max-width: 364.98px) {
   .backstage .container {
     width: 100%;
     margin: 0px 10px 0px 10px;
@@ -1061,6 +1094,11 @@ body {
     width: 100%;
     gap: 42px;
     margin-bottom: 40px;
+  }
+}
+@media (max-width: 640px) {
+  .how__list {
+    justify-content: flex-start;
   }
 }
 @media (max-width: 639.98px) {
