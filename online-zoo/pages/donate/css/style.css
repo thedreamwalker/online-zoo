@@ -5,6 +5,11 @@
 }
 @media (max-width: 1599.98px) {
   .watch {
+    background: url(../../../assets/img/panda_bg.png) left center no-repeat;
+  }
+}
+@media (max-width: 1419.98px) {
+  .watch {
     background: url(../../../assets/img/panda_bg.png) left -173px center no-repeat;
   }
 }
@@ -16,6 +21,13 @@
   }
 }
 @media (max-width: 639.98px) {
+  .watch {
+    min-height: 187px;
+    background: url(../../../assets/img/panda_bg.png) left -129px center no-repeat;
+    background-size: cover;
+  }
+}
+@media (max-width: 539.98px) {
   .watch {
     min-height: 187px;
     background: url(../../../assets/img/panda_bg.png) left -148px center no-repeat;
@@ -209,8 +221,13 @@
   justify-content: center;
   align-items: center;
   gap: 89px;
-  margin-bottom: 48px;
+  margin-bottom: 46px;
   padding-right: 13px;
+}
+@media (max-width: 1599.98px) {
+  .panda {
+    margin-bottom: 48px;
+  }
 }
 @media (max-width: 999.98px) {
   .panda {
@@ -314,6 +331,11 @@
   margin-left: 4px;
   margin-bottom: 17px;
 }
+@media (max-width: 1599.98px) {
+  .amount p {
+    margin-left: 20px;
+  }
+}
 @media (max-width: 999.98px) {
   .amount p {
     margin-left: 10px;
@@ -339,6 +361,8 @@
 @media (max-width: 1599.98px) {
   .amount__fieldset {
     width: 96%;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 @media (max-width: 999.98px) {
