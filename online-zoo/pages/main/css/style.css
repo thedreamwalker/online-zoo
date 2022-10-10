@@ -60,6 +60,26 @@ body {
     max-width: 93.75%;
   }
 }
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(41, 41, 41, 0.6);
+  z-index: 1;
+}
+.overlay.active {
+  display: block;
+}
+
+.disable__scroll {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
 .hidden {
   display: none;
 }
@@ -646,6 +666,7 @@ body {
   border: none;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   transition: background-color 0.3s;
+  z-index: 2;
 }
 @media (max-width: 1599.98px) {
   .card__button {
@@ -721,16 +742,44 @@ body {
   }
 }
 
-.card__list {
+.slider__wrapper {
+  width: 1160px;
+  overflow: hidden;
+}
+@media (max-width: 1599.98px) {
+  .slider__wrapper {
+    width: 940px;
+  }
+}
+@media (max-width: 999.98px) {
+  .slider__wrapper {
+    width: 600px;
+  }
+}
+
+.slider__list {
   display: flex;
-  flex-wrap: wrap;
+  position: relative;
+  width: 300%;
+  overflow: hidden;
+  transform: translateX(-33.3333333333%);
+}
+
+.card__list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-auto-rows: 0;
   list-style: none;
   gap: 20px 30px;
   width: 1160px;
+  height: 872px;
+  overflow-y: hidden;
 }
 @media (max-width: 1599.98px) {
   .card__list {
     width: 940px;
+    height: 801px;
     gap: 92px 29px;
   }
 }
@@ -742,7 +791,6 @@ body {
     grid-auto-rows: 0;
     width: 100%;
     height: 756px;
-    overflow-y: hidden;
   }
 }
 @media (max-width: 639.98px) {
@@ -768,32 +816,10 @@ body {
   .card__list .card__item {
     width: 294px;
   }
-  .card__list .card__item:nth-of-type(4) {
-    display: none;
-  }
-  .card__list .card__item:nth-of-type(5) {
-    order: 1;
-  }
-  .card__list .card__item:nth-of-type(3) {
-    order: 2;
-  }
-  .card__list .card__item:nth-of-type(6) {
-    order: 4;
-  }
-  .card__list .card__item:nth-of-type(7) {
-    display: block;
-    order: 3;
-  }
 }
 @media (max-width: 999.98px) {
   .card__list .card__item {
     width: 285px;
-  }
-  .card__list .card__item:nth-of-type(3) {
-    order: 1;
-  }
-  .card__list .card__item:nth-of-type(5) {
-    order: 4;
   }
 }
 @media (max-width: 639.98px) {
@@ -1209,6 +1235,7 @@ body {
   .testimonials {
     padding-top: 28px;
     padding-bottom: 58px;
+    background: url(../../../assets/img/leav_foto.png) no-repeat right bottom -34px/19%;
   }
 }
 .testimonials .container {
@@ -1239,24 +1266,28 @@ body {
   }
 }
 
+.testimonials__wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+
 .testimonials__list {
+  width: 280%;
   display: flex;
-  gap: 30px;
+  gap: 0px 30px;
   margin-bottom: 21px;
   list-style: none;
+  transform: translateX(0%);
+  transition: transform 0.5s;
 }
 @media (max-width: 1599.98px) {
   .testimonials__list {
-    display: grid;
-    grid-template-rows: 1fr;
-    grid-auto-rows: 0;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 0px 30px;
-    overflow-y: hidden;
+    width: 375%;
   }
 }
 @media (max-width: 999.98px) {
   .testimonials__list {
+    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -1299,32 +1330,6 @@ body {
 @media (max-width: 639.98px) {
   .testimonials__item {
     padding: 9px 21px 8px 9px;
-  }
-}
-@media (max-width: 1599.98px) {
-  .testimonials__item:nth-of-type(2) {
-    order: 3;
-  }
-}
-@media (max-width: 1599.98px) {
-  .testimonials__item:nth-of-type(3) {
-    order: 2;
-  }
-}
-@media (max-width: 1599.98px) {
-  .testimonials__item:nth-of-type(4) {
-    order: 4;
-  }
-}
-@media (max-width: 1599.98px) {
-  .testimonials__item:nth-of-type(5) {
-    display: block;
-    order: 1;
-  }
-}
-@media (max-width: 999.98px) {
-  .testimonials__item:nth-of-type(5) {
-    display: flex;
   }
 }
 
@@ -1387,6 +1392,17 @@ body {
   border-radius: 20px;
   background-image: linear-gradient(#F5F7F6, #F5F7F6), linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%), linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%);
   background-clip: padding-box, border-box;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  cursor: pointer;
+  /*
+  &::-webkit-slider-runnable-track {
+  }
+  */
+  /*
+    &::-moz-range-track {
+    }*/
 }
 @media (max-width: 1599.98px) {
   .testimonials__scroll {
@@ -1399,6 +1415,26 @@ body {
   .testimonials__scroll {
     display: none;
   }
+}
+.testimonials__scroll::-webkit-slider-thumb {
+  width: 19.2%;
+  height: 6px;
+  background-color: #fe9013;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  -webkit-appearance: none;
+          appearance: none;
+}
+.testimonials__scroll::-moz-range-thumb {
+  width: 19.2%;
+  height: 6px;
+  background-color: #fe9013;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  -moz-appearance: none;
+       appearance: none;
 }
 
 .testimonials__scroll_line {
@@ -1748,4 +1784,102 @@ body {
   top: 2px;
   left: 4px;
   background-image: url(../../../assets/svg/youtube.svg);
+}
+
+@-webkit-keyframes left {
+  from {
+    left: 0;
+  }
+  to {
+    left: -100%;
+  }
+}
+
+@keyframes left {
+  from {
+    left: 0;
+  }
+  to {
+    left: -100%;
+  }
+}
+@-webkit-keyframes right {
+  from {
+    left: 100%;
+  }
+  to {
+    left: 0;
+  }
+}
+@keyframes right {
+  from {
+    left: 100%;
+  }
+  to {
+    left: 0;
+  }
+}
+.slider__to_left {
+  -webkit-animation: left 0.9s;
+          animation: left 0.9s;
+}
+
+.slider__to_right {
+  animation: right 0.9s reverse;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 267px;
+  height: 391px;
+  z-index: 1;
+}
+.popup.active {
+  display: block;
+}
+
+.popup__testimonial {
+  height: 100%;
+}
+.popup__testimonial .testimonials__item {
+  height: 100%;
+}
+
+.popup__close {
+  position: absolute;
+  top: 0;
+  right: -12px;
+  width: 14px;
+  height: 14px;
+  background-color: transparent;
+  border: none;
+}
+.popup__close::before, .popup__close::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 19px;
+  height: 2px;
+  background-color: #FEBDAB;
+  transform: rotate(45deg);
+}
+.popup__close::after {
+  transform: rotate(-45deg);
+}
+
+.popup__back {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  cursor: pointer;
 }/*# sourceMappingURL=style.css.map */
