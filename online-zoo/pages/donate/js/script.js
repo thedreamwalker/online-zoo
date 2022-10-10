@@ -36,6 +36,10 @@ allSums.forEach(sum => {
 amountAnother.addEventListener('change', () => {
 
   allSums.forEach(sum => {
+    if (amountAnother.value.length > 4) {
+      amountAnother.value = amountAnother.value.slice(0, 4);
+    }
+
     if (amountAnother.value === sum.value) {
       sum.checked = true;
     } else {
