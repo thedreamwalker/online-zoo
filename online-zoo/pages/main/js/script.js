@@ -251,3 +251,22 @@ testimonialsContainer.addEventListener('click', event => {
 
 popUpButton.addEventListener('click', testimonialsPopUpClose);
 popUpBack.addEventListener('click', testimonialsPopUpClose);
+
+/* Burger menu */
+
+const burgerButton = document.querySelector('.nav__burger_button');
+const menu = document.querySelector('.nav');
+
+const switcherBurgerMenu = () => {
+  menu.classList.toggle('active');
+  burgerButton.classList.toggle('active');
+
+  if (overlay.classList.contains('active')) {
+    overlay.classList.remove('active');
+  } else {
+    overlay.classList.add('active');
+  }
+};
+
+burgerButton.addEventListener('click', switcherBurgerMenu);
+overlay.addEventListener('click', switcherBurgerMenu);
