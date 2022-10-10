@@ -1,0 +1,58 @@
+[
+  {
+    "img": "../../assets/img/pandas.png",
+    "type": "Giant Pandas",
+    "area": "Native to Southwest China",
+    "predator": false,
+    "id": 1
+  },
+  {
+    "img": "../../assets/img/eagles.png",
+    "type": "Eagles",
+    "area": "Native to South America",
+    "predator": true,
+    "id": 2
+  },
+  {
+    "img": "../../assets/img/gorillas.png",
+    "type": "Gorillas",
+    "area": "Native to Congo",
+    "predator": false,
+    "id": 3
+  },
+  {
+    "img": "../../assets/img/two-toed-sloth.png",
+    "type": "Two-toed Sloth",
+    "area": "Mesoamerica, South America",
+    "predator": false,
+    "id": 4
+  },
+  {
+    "img": "../../assets/img/cheetahs.png",
+    "type": "Cheetahs",
+    "area": "Native to Africa",
+    "predator": true,
+    "id": 5
+  },
+  {
+    "img": "../../assets/img/penguins.png",
+    "type": "Penguins",
+    "area": "Native to Antarctica",
+    "predator": true,
+    "id": 6
+  },
+  {
+    "img": "../../assets/img/alligators.png",
+    "type": "Alligators",
+    "area": "Native to Southeastern U. S.",
+    "predator": true,
+    "id": 7
+  },
+  {
+    "img": "../../assets/img/gorillas2.png",
+    "type": "Gorillas",
+    "area": "Native to Congo",
+    "predator": false,
+    "id": 8
+  }
+]
