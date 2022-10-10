@@ -321,6 +321,11 @@ body {
         gap: 15px;
         padding-bottom: 27px;
       }
+
+      .nav__item_active,
+      .nav__item_active a {
+        pointer-events: auto;
+      }
   
       .nav__item a {
         color: $color-text-dark;

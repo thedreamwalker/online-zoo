@@ -236,6 +236,10 @@ body {
     gap: 15px;
     padding-bottom: 27px;
   }
+  .header .nav .nav__item_active,
+.header .nav .nav__item_active a {
+    pointer-events: auto;
+  }
   .header .nav .nav__item a {
     color: #333b41;
   }
