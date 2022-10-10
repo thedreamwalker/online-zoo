@@ -38,6 +38,8 @@ amountAnother.addEventListener('change', () => {
   allSums.forEach(sum => {
     if (amountAnother.value === sum.value) {
       sum.checked = true;
+    } else {
+      sum.checked = false;
     }
   });
 });
