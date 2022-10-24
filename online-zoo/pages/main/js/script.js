@@ -241,7 +241,7 @@ testimonialsContainer.addEventListener('click', event => {
       });
   };
 
-  if (event.target.closest('.testimonials__item') && window.innerWidth < 639) {
+  if (event.target.closest('.testimonials__item') && window.innerWidth < 640) {
     testimonialsPopUpOpen();
     const id = event.target.closest('.testimonials__item').getAttribute('data-id');
 
